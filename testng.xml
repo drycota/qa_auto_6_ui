@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="BLR_Analytics" verbose="10" parallel="tests">
+<suite name="QA Auto 6" verbose="10" parallel="tests">
 
-	<!--<test name="NewIssue" group-by-instances="true" verbose="3">-->
-    		<!--<classes>-->
-				<!--<class name="tests.NewIssueTest" />-->
-		    <!--</classes>-->
-	<!--</test>-->
+    <test name="API and UI tests" group-by-instances="true" verbose="3">
 
-	<!--<test name="Search in Jira" group-by-instances="true" verbose="3">-->
-		<!--<classes>-->
-			<!--<class name="tests.SearchJira"/>-->
-		<!--</classes>-->
+        <groups>
+            <run>
+                <include name="regression"/>
+                <include name="functional"/>
+                <include name="login"/>
+            </run>
+        </groups>
 
-	<test name="LoginTest" group-by-instances="true" verbose="3">
-		<classes>
-			<class name="tests.UserAvatar"/>
-		</classes>
-	</test>
+      <package>
+          <packages>
+              <package name="api" />
+              <package name="ui" />
+          </packages>
+      </package>
+    </test>
+
 </suite>
